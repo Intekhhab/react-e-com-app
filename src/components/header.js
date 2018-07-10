@@ -23,6 +23,9 @@ class HeaderComponent extends Component{
           <li className="nav-item">
             <Link className="nav-link" to="/signup">Signup</Link>
           </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/todoapp">ToDoApp</Link>
+          </li>
         </ul>
         <h1 style={{float: 'right'}}>{this.props.num}</h1>
       </nav>

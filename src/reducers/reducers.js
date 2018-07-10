@@ -3,7 +3,9 @@ export function rootReducer(state, action) {
 		case "INCREMENT" :
 			return [...state];
 		case "ADD_TO_CART":
-			return {products: state.products, carts: [...state.carts, action.index]}
+			return {products: state.products, carts: [...state.carts, action.index]};
+		case "ADD_NEW_TODO" :
+			return {products: state.products, carts: [...state.carts], todolist: [...state.todolist, action.text]};
 	}
 
 	return {
@@ -39,6 +41,7 @@ export function rootReducer(state, action) {
 
 			},
 		],
-		carts: []
+		carts: [],
+		todolist: [],
 	}
 }
