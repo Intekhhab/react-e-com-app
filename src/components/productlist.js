@@ -15,11 +15,13 @@ class ProductList extends React.Component {
 	}
 
 	render() {
+		console.log(this.props);
+		//debugger;
 		return (
 			<div className="container">
 				<div className="row">
 				{
-					this.props.products.map((product, index)=>{
+					this.props.products.products.map((product, index)=>{
 						return (
 					    	<div key={index} className="col-12 col-md-6 col-lg-4" style={{marginTop: '40px', marginBottom: '40px'}}>
 			                    <div className="card">
@@ -49,7 +51,7 @@ class ProductList extends React.Component {
 
 const mapStateToProps = (store) => {
 	return {
-		products: store.products,
+		products: store.todo,
 	}
 }
 

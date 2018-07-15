@@ -26,8 +26,11 @@ class HeaderComponent extends Component{
           <li className="nav-item">
             <Link className="nav-link" to="/todoapp">ToDoApp</Link>
           </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/counterapp">CounterApp</Link>
+          </li>
         </ul>
-        <h1 style={{float: 'right'}}>{this.props.num}</h1>
+        {/*<h1 style={{float: 'right'}}>{this.props.num}</h1>*/}
       </nav>
     );
   }
@@ -35,8 +38,8 @@ class HeaderComponent extends Component{
 
 const mapStateToProps = (store) => {
   return {
-    num: store.carts.length
+    num: store.todo.carts.length
   }
 }
 
-export default connect(mapStateToProps)(HeaderComponent)
+export default connect(null)(HeaderComponent)

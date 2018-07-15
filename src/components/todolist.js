@@ -27,7 +27,7 @@ class ToDoList extends Component{
 
 const mapStateToProps = (store) => {
   return {
-    todolist: store.todolist,
+    todolist: store.todo.todolist,
   }
 }
 

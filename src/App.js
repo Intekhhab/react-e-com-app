@@ -7,6 +7,7 @@ import ProductList from "./components/productlist";
 import LoginComponent from "./components/login";
 import { default as ToDoList } from "./components/todolist";
 import { default as AddToDo } from "./components/addtodo";
+import Counter from './components/counterApp'
 import NotFound from './components/notfound';
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
         <Route exact path="/" component={LoginComponent}></Route>
           <Route path="/login" component={LoginComponent}></Route>
           <Route path="/product" component={ProductList}></Route>
+          <Route path="/counterapp" component={Counter}></Route>
           
           <Route
              path="/todoapp"
