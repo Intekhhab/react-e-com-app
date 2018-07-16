@@ -1,14 +1,31 @@
 export const INCREMENT = 'INCREMENT';
 export const DECREMENT = 'DECREMENT';
+export const ADD_COUNTER = "ADD_COUNTER";
+export const REMOVE_COUNTER = "REMOVE_COUNTER";
 
-export const incrementCounter = () => {
+export const addCounterFunction = () => {
 	return {
-		type: INCREMENT
+		type: ADD_COUNTER,
 	}
 }
 
-export const decrementCounter = () => {
+export const incrementCounter = (index) => {
 	return {
-		type: DECREMENT
+		type: INCREMENT,
+		index,
+	}
+}
+
+export const decrementCounter = (index) => {
+	return {
+		type: DECREMENT,
+		index,
+	}
+}
+
+export const removeCounter = (index) => {
+	return {
+		type: REMOVE_COUNTER,
+		index,
 	}
 }
