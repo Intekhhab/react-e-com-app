@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 import {INCREMENT, DECREMENT, ADD_COUNTER, REMOVE_COUNTER,
 	incrementCounter, decrementCounter, addCounterFunction, removeCounter
-} from '../actions/counter';
+} from '../actions/actions';
 
 class Counter extends React.Component{
 	constructor(props){

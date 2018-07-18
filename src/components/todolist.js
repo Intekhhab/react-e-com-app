@@ -10,16 +10,33 @@ class ToDoList extends Component{
   render() {
     //console.log(this.props.todolist);
     return(
-      <div className="container" style={{marginTop: '50px'}}>
+      <div className="container">
         <h2>To Do List</h2>
-        <ul className="list-group">
-        {
-          this.props.todolist.map((elem, index) => {
-            return <li key={index} className="list-group-item">{elem} item</li> 
-          })
-        }
-          
-        </ul>
+        
+        <table className="table table-dark table-hover">
+          <thead>
+            <tr>
+              <th>To Do Name</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            {
+              this.props.todolist.map((elem, index) => {
+                return (
+                  <tr key={index}>
+                    <td>{elem}</td>
+                    <td>Pending</td>
+                    <td>X</td>
+                  </tr>
+                )
+              })
+            }
+
+          </tbody>
+        </table>
       </div>
     );
   }

@@ -1,18 +1,54 @@
 import React from "react";
+import {connect} from "react-redux";
 
-export default class LoginComponent extends React.Component{
+import {loginUser, LOGIN} from '../actions/actions'
+
+class LoginComponent extends React.Component{
+	constructor(props) {
+		super(props);
+		this.state = {
+			email: '',
+			password: '',
+		};
+		this.handlechangeEmail = this.handlechangeEmail.bind(this);
+		this.handlechangePass = this.handlechangePass.bind(this);
+		this.login = this.login.bind(this);
+	}
+
+	handlechangeEmail(e) {
+		this.setState({email: e.target.value});
+	}
+	handlechangePass = (e) =>{
+		this.setState({password: e.target.value});
+	}
+
+	login(e) {
+		e.preventDefault();
+		this.props.dispatch(loginUser({email: this.state.email}));
+		this.props.history.push('/todoapp')
+
+	}
+
 	render() {
 		return(
 			<div className="container">
-			  <h2>Stacked form</h2>
-			  <form action="/action_page.php">
+			  <h2>LOGIN</h2>
+			  <form onSubmit={this.login}>
 			    <div className="form-group">
 			      <label htmlFor="email">Email:</label>
-			      <input type="email" className="form-control" id="email" placeholder="Enter email" name="email" />
+			      <input
+			      	value={this.state.email}
+			      	ref={this.state.emalRef}
+			      	onChange={this.handlechangeEmail}
+			       type="email" className="form-control" id="email" placeholder="Enter email" name="email" />
 			    </div>
 			    <div className="form-group">
 			      <label htmlFor="pwd">Password:</label>
-			      <input type="password" className="form-control" id="pwd" placeholder="Enter password" name="pswd" />
+			      <input 
+			      	value={this.state.password}
+			      	ref={this.state.passRef}
+			      	onChange={this.handlechangePass}
+			      type="password" className="form-control" id="pwd" placeholder="Enter password" name="pswd" />
 			    </div>
 			    <div className="form-group form-check">
 			      <label className="form-check-label">
@@ -27,3 +63,5 @@ export default class LoginComponent extends React.Component{
 		)
 	}
 }
+
+export default connect(null)(LoginComponent);

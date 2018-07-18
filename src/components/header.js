@@ -29,6 +29,9 @@ class HeaderComponent extends Component{
           <li className="nav-item">
             <Link className="nav-link" to="/counterapp">CounterApp</Link>
           </li>
+          <li className="nav-item">
+            <div className="nav-link">{this.props.user && this.props.user.email}</div>
+          </li>
         </ul>
         {/*<h1 style={{float: 'right'}}>{this.props.num}</h1>*/}
       </nav>
@@ -38,8 +41,9 @@ class HeaderComponent extends Component{
 
 const mapStateToProps = (store) => {
   return {
-    num: store.todo.carts.length
+    num: store.todo.carts.length,
+    user: store.login,
   }
 }
 
-export default connect(null)(HeaderComponent)
+export default connect(mapStateToProps)(HeaderComponent)

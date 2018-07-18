@@ -2,6 +2,7 @@ export const INCREMENT = 'INCREMENT';
 export const DECREMENT = 'DECREMENT';
 export const ADD_COUNTER = "ADD_COUNTER";
 export const REMOVE_COUNTER = "REMOVE_COUNTER";
+export const LOGIN = "LOGIN";
 
 export const addCounterFunction = () => {
 	return {
@@ -27,5 +28,11 @@ export const removeCounter = (index) => {
 	return {
 		type: REMOVE_COUNTER,
 		index,
+	}
+}
+export const loginUser = (data) => {
+	return {
+		type: LOGIN,
+		data,
 	}
 }

@@ -22,13 +22,28 @@ class AddToDo extends React.Component{
 	render() {
 		return(
 			<div className="container">
-			  <h2>Add New To Do form</h2>
-			  <form onSubmit={(e) => {this._submit(e)}}>
+			  <h2>Add to do</h2>
+			  
+			  <form className="form-inline" onSubmit={this._submit}>
 			    <div className="form-group">
-			      <label htmlFor="todo">TODO:</label>
-			      <input autoComplete="off" type="todo" className="form-control" id="todo" placeholder="Enter To Do" name="todo" />
+			      <label htmlFor="email">To do name:</label>
+			      <input type="todo" className="form-control" id="todo" placeholder="Enter to do" name="todo"/>
 			    </div>
-			    <button type="submit" className="btn btn-primary">Submit</button>
+			    <div className="form-group">
+			      <label htmlFor="pwd">Status:</label>
+
+			      <div className="dropdown">
+					  <button type="button" className="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+					    Select Status
+					  </button>
+					  <div className="dropdown-menu">
+					    <a className="dropdown-item" href="#">done</a>
+					    <a className="dropdown-item" href="#">pending</a>
+					  </div>
+					</div>
+			    </div>
+			    
+			    <button type="submit" className="btn btn-default">Submit</button>
 			  </form>
 			</div>
 		)

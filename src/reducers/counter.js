@@ -1,7 +1,7 @@
-import {INCREMENT, DECREMENT, ADD_COUNTER, REMOVE_COUNTER} from '../actions/counter';
+import {INCREMENT, DECREMENT, ADD_COUNTER, REMOVE_COUNTER} from '../actions/actions';
 
 export default function(state = [], action) {
-	console.log(state, '%%%');
+	
 	var newState;
 	switch(action.type){
 		case INCREMENT:
