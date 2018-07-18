@@ -9,5 +9,5 @@ const rootReducer = combineReducers({
 	counter,
 	login,
 });
-
+console.log('%%%%', rootReducer);
 export default rootReducer;
