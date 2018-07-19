@@ -32,19 +32,21 @@ class Counter extends React.Component{
 	render() {
 		return (
 			<div className="container">
-			<button type="button" className="btn btn-warning" onClick={this.addNewCounter}> Add Counter</button>
-			{
-				this.props.count.map((elem, index)=>{
-					return (
-						<div className="counter-app" key={index}>
-						<h1>{elem}</h1>
-						<button onClick={()=>{this.increment(index)}} type="button" className="btn btn-primary" style={{width: '50px'}}>+</button>
-						<button onClick={()=>{this.decrement(index)}} type="button" className="btn btn-info"  style={{marginLeft: '20px', width: '50px'}}>-</button>
-						<button onClick={()=>{this.remove(index)}} type="button" className="btn btn-danger" style={{marginLeft: '20px'}}>Remove Counter</button>
-					</div>
-					)
-				})
-			}
+				<div className="counter-container">
+					<button type="button" className="btn btn-warning" onClick={this.addNewCounter}> Add Counter</button>
+					{
+						this.props.count.map((elem, index)=>{
+							return (
+								<div className="counter-app" key={index}>
+								<h1>{elem}</h1>
+								<button onClick={()=>{this.increment(index)}} type="button" className="btn btn-primary" style={{width: '50px'}}>+</button>
+								<button onClick={()=>{this.decrement(index)}} type="button" className="btn btn-info"  style={{marginLeft: '20px', width: '50px'}}>-</button>
+								<button onClick={()=>{this.remove(index)}} type="button" className="btn btn-danger" style={{marginLeft: '20px'}}>Remove Counter</button>
+							</div>
+							)
+						})
+					}
+				</div>
 			</div>
 		)
 	}

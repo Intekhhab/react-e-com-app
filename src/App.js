@@ -27,6 +27,15 @@ class App extends Component {
              }}
           />
 
+          <Route
+             path="/signup"
+             render={(props)=>{
+                     return (<div className="signup-container">
+                        <h1>Sign up coming soon....</h1>
+                      </div>)
+             }}
+          />
+
           <Route component={NotFound}></Route>
         </Switch>
       </div>

@@ -11,32 +11,34 @@ class ToDoList extends Component{
     //console.log(this.props.todolist);
     return(
       <div className="container">
-        <h2>To Do List</h2>
-        
-        <table className="table table-dark table-hover">
-          <thead>
-            <tr>
-              <th>To Do Name</th>
-              <th>Status</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-            {
-              this.props.todolist.map((elem, index) => {
-                return (
-                  <tr key={index}>
-                    <td>{elem}</td>
-                    <td>Pending</td>
-                    <td>X</td>
-                  </tr>
-                )
-              })
-            }
+        <div className="todolist-container">
+          <h2>To Do List</h2>
+          
+          <table className="table table-dark table-hover">
+            <thead>
+              <tr>
+                <th>To Do Name</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+              {
+                this.props.todolist.map((elem, index) => {
+                  return (
+                    <tr key={index}>
+                      <td>{elem}</td>
+                      <td>Pending</td>
+                      <td>X</td>
+                    </tr>
+                  )
+                })
+              }
 
-          </tbody>
-        </table>
+            </tbody>
+          </table>
+        </div>
       </div>
     );
   }

@@ -23,7 +23,56 @@
 }
 
 .counter-app {
-  margin-top: 50px;
+  margin-top: 20px;
+    border: 1px solid #007bff;
+    padding: 10px 5px 20px 5px;
+}
+
+.login-container {
+  max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #d2cfcf;
+    position: relative;
+    top: 20px;
+}
+.error {
+  color: red;
+}
+
+.counter-container {
+  max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #d2cfcf;
+    position: relative;
+    top: 20px;
+}
+
+.addtodo-container {
+  max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #d2cfcf;
+    position: relative;
+    top: 20px;
+}
+.todolist-container {
+  max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #d2cfcf;
+    position: relative;
+    top: 40px;
+}
+
+.signup-container {
+  max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #d2cfcf;
+    position: relative;
+    top: 20px;
 }
 
 @keyframes App-logo-spin {
