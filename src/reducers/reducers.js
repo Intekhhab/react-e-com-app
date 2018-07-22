@@ -3,6 +3,7 @@
 import todo from './todo';
 import counter from './counter';
 import login from './login';
+import shift from './shift';
 
 const combineReducers = reducers => {
   return (state = {}, action) => {
@@ -26,6 +27,7 @@ const rootReducer = combineReducers({
 	todo,
 	counter,
 	login,
+  shiftItems: shift,
 });
 console.log('%%%%', rootReducer);
 export default rootReducer;

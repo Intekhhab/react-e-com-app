@@ -1,3 +1,16 @@
+.home-page {
+  background: url(/images/fotolia_84828700_m.jpg);
+  position: fixed;
+    left: 0;
+    /*top: 0;*/
+    right: 0;
+    /*bottom: 0;*/
+    width: 100%;
+    height: 100%;
+    background-position: 50% 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 .App {
   text-align: center;
 }
@@ -73,6 +86,60 @@
     border: 1px solid #d2cfcf;
     position: relative;
     top: 20px;
+}
+.home-links {
+  color: #333;
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: 5px;
+}
+
+.home-links li {
+  margin: 10px;
+}
+.home-links li a {
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+}
+.home-links li a:hover {
+  background: #7f8183;
+  color: #fff !important;
+}
+
+
+.h140 {
+  height: 140px;
+}
+ul li {
+  list-style-type: none;
+}
+
+.navbar-nav li a {
+  color: #333 !important;
+}
+
+.m10 {
+  margin: 10px;
+}
+
+.shift-container{
+  margin: 20px;
+  padding: 20px;
+  
+}
+.shift-container .list-container{
+  border: 1px solid #e5cece;
+  padding-top: 10px;
+}
+
+.shift-container .list-container ul li {
+  margin: 20px;
+  padding: 10px;
+  border: 1px solid #d3d4d9;
+}
+.shift-container .list-container ul li.selected {
+  border: 1px solid #230808;
 }
 
 @keyframes App-logo-spin {
