@@ -45,5 +45,5 @@ export default function(state = [], action) {
 			newState.splice(action.index, 1);
 			return newState;
 	}
-	return [];
+	return state;
 }

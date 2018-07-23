@@ -1,11 +1,11 @@
-//import {combineReducers} from 'redux';
+import {combineReducers} from 'redux';
 
 import todo from './todo';
 import counter from './counter';
 import login from './login';
 import shift from './shift';
 
-const combineReducers = reducers => {
+/*const combineReducers = reducers => {
   return (state = {}, action) => {
   	
     // Reduce all the keys for reducers from `todos` and `visibilityFilter`
@@ -21,7 +21,7 @@ const combineReducers = reducers => {
       {} // The `reduce` on our keys gradually fills this empty object until it is returned.
     );
   };
-};
+};*/
 
 const rootReducer = combineReducers({
 	todo,

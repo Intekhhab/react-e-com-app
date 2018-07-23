@@ -7,6 +7,22 @@ class ToDoList extends Component{
     super(props);
   }
 
+  componentDidMount() {
+    console.log('component did mount');
+  }
+
+  componentDidUpdate(prevProps, preState, snap) {
+    console.log(prevProps, preState, snap);
+  }
+
+  getSnapshotBeforeUpdate() {
+    return 'Intekhab';
+  }
+
+  componentWillUnmount() {
+    console.log('component will unmount');
+  }
+
   render() {
     //console.log(this.props.todolist);
     return(

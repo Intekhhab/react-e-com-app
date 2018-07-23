@@ -8,6 +8,9 @@ export default function todo(state, action) {
 			return {products: state.products, carts: [...state.carts], todolist: [...state.todolist, action.text]};
 	}
 
+	if (state)
+		return state;
+
 	return {
 		products,
 		carts: [],
