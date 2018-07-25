@@ -15,6 +15,7 @@ export default class Home extends React.Component {
 								<li><Link to="/login">LOGIN</Link></li>
 								<li><Link to="/signup">SIGNUP</Link></li>
 								<li><Link to="/shiftapp">SHIFT APP</Link></li>
+								<li><Link to="/user">USER</Link></li>
 							</ul>
 						</div>
 					</div>

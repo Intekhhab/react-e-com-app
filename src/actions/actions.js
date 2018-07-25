@@ -12,6 +12,9 @@ export const LOGIN = "LOGIN";
 export const MOVELEFT = 'MOVELEFT';
 export const MOVERIGHT = 'MOVERIGHT';
 
+export const GET_USER = 'GET_USER';
+export const USER_PAGE = 'USER_PAGE';
+
 export const addCounterFunction = () => {
 	return {
 		type: ADD_COUNTER,
@@ -81,5 +84,19 @@ export const loginUser = (data) => {
 	return {
 		type: LOGIN,
 		data,
+	}
+}
+
+export const getUser = (data) => {
+	return {
+		type: GET_USER,
+		data,
+	}
+}
+
+export const userPage = (page) => {
+	return {
+		type: USER_PAGE,
+		page,
 	}
 }
