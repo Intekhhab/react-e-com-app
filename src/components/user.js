@@ -2,6 +2,8 @@ import React, { Component } from "react";
 
 import {connect} from 'react-redux';
 
+import {Link} from 'react-router-dom';
+
 import axios from 'axios';
 
 import user from '../data/people.json';
@@ -18,6 +20,7 @@ class User extends Component {
     };
     this.axiosCancelToken = undefined;
     this.setPagination = this.setPagination.bind(this);
+    this.redirectToDetail = this.redirectToDetail.bind(this);
   }
 
   componentWillUnmount() {
@@ -29,6 +32,10 @@ class User extends Component {
     if (i < 1 || i > Math.ceil(this.state.users.count/10)) return ;
     this.setState({currentPage: i});
     this.getUsers(i);
+  }
+
+  redirectToDetail(id) {
+    this.props.history.push(`/user/${id}`)
   }
 
   componentDidMount = ()=> {
@@ -72,14 +79,14 @@ class User extends Component {
         <div className="">
           <h2>USERS LIST</h2>
           
-          <table className="table table-dark table-hover">
+          <table className="table table-hover">
             <thead>
               <tr>
                 <th>Name</th>
-                <th>Height</th>
-                <th>Mass</th>
+                <th className="d-none d-md-block">Height</th>
+                <th className="">Mass</th>
                 <th>Gender</th>
-                <th>Eye Color</th>
+                <th className="d-none d-sm-block">Eye Color</th>
                 <th>Birth Year</th>
               </tr>
             </thead>
@@ -88,12 +95,14 @@ class User extends Component {
               {
                 users.map((u, i) => {
                   return (
-                    <tr key={i} className="cursor-pointer">
+                    <tr key={i} 
+                    onClick={()=> {this.redirectToDetail(i+1)}}
+                    className="cursor-pointer">
                       <td>{u.name}</td>
-                      <td>{u.height}</td>
-                      <td>{u.mass}</td>
+                      <td className="d-none d-md-block">{u.height}</td>
+                      <td className="">{u.mass}</td>
                       <td>{u.gender}</td>
-                      <td>{u.eye_color}</td>
+                      <td className="d-none d-sm-block">{u.eye_color}</td>
                       <td>{u.birth_year}</td>
                     </tr>
                   )
@@ -102,9 +111,11 @@ class User extends Component {
 
             </tbody>
           </table>
+          {!users.length && <div className="loader"></div>}
         </div>
       </div>
       <Pagination records={this.state.users.count} currentPage={this.state.currentPage} setPagination={this.setPagination}/>
+      
       </div>
     );
   }

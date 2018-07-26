@@ -15,6 +15,7 @@ import { default as AddToDo } from "./components/addtodo";
 //import Counter from './components/counterApp';
 import Shift from './components/shift';
 import User from './components/user';
+import UserDetails from './components/user-details';
 import NotFound from './components/notfound';
 
 const Counter = asyncComponent(() => import("./components/counterApp"));
@@ -40,7 +41,8 @@ class App extends Component {
           
           <Route path="/shiftapp" component={Shift}></Route>
 
-          <Route path="/user" component={User}></Route>
+          <Route exact path="/user" component={User}></Route>
+          <Route exact path="/user/:id" component={UserDetails}></Route>
 
           <Route
              path="/todoapp"
