@@ -2,6 +2,8 @@ import React from 'react';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 
+import Button from '@material-ui/core/Button';
+
 import {
 	INCREMENT, 
 	INCREMENTBY2,
@@ -72,6 +74,7 @@ class Counter extends React.Component{
 			<div className="container">
 				<div className="counter-container">
 					<button type="button" className="btn btn-warning" onClick={this.addNewCounter}> Add Counter</button>
+					<Button style={{marginLeft: '20px'}} onClick={this.addNewCounter} color="primary" variant="contained">Add Counter</Button>
 					{
 						this.props.count.map((elem, index)=>{
 							return (
