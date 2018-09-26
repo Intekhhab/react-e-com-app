@@ -34,7 +34,7 @@ class App extends Component {
       <div className="App">
         <HeaderComponent />
         <Switch>
-        <Route exact path="/" component={Home}></Route>
+          <Route exact path="/" component={Home}></Route>
           <Route path="/login" component={LoginComponent}></Route>
           <Route path="/product" component={ProductList}></Route>
           <Route path="/counterapp" component={Counter}></Route>
